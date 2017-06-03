@@ -9,7 +9,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="resize()">
 <!--This is body-->
 <a id="flower1" onclick="picClicked(this)"><img src="pic/timg.jpg" alt=""></a>
 <a id="flower2" onclick="picClicked(this)"><img src="pic/timg.jpg" alt=""></a>
@@ -22,6 +22,11 @@
     var frame2 = window.parent.document.getElementById("iFrame2");
     frame2.height = document.body.clientHeight + 20;
 
+    function resize()
+    {
+        var frame2 = window.parent.document.getElementById("iFrame2");
+        frame2.height = document.body.clientHeight + 20;
+    }
     function picClicked(img)
     {
         sessionStorage.setItem("clickedPic", img.id);
