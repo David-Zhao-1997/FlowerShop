@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jQuery.js"></script>
+    <script src="Objects.js"></script>
+</head>
+<body>
+<iframe name="headFrame" id="iFrame1" width="100%" height="100" src="head.html" name="HeaderFrame"
+        src=""
+        frameborder="0"></iframe>
+<iframe name="bodyFrame" id="iFrame2" width="100%" height="400" src="body.html"
+        name="NavigationFrame"
+        frameborder="0"></iframe>
+<iframe name="footFrame" id="iFrame3" width="100%" height="100" src="foot.html" name="ContentFrame2"
+        frameborder="0"></iframe>
+<script>
+    var frame1 = document.getElementById("iFrame1");
+    var frame2 = document.getElementById("iFrame2");
+    alert(window.bodyFrame.body.clientHeight);
+    var frame3 = document.getElementById("iFrame3");
+    //    frame1.height = document.body.clientHeight * 0.1;
+    //    frame2.height = document.body.clientHeight * 0.7;
+    //    frame3.height = document.body.clientHeight * 0.14;
+
+    //    var name = ['flower1', 'flower2', 'flower3'];
+    //    sessionStorage.setItem("name", name);
+
+</script>
+<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">test1
+</button>
+<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">test2
+</button>
+<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">test3
+</button>
+</body>
+</html>

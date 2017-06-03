@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="Objects.js"></script>
+</head>
+<body>
+<script>
+    var flower = sessionStorage.getItem("clickedPic");
+    //alert(flower);
+    var str1 = JSON.parse(flower);
+    alert(str1.floName);
+    alert(str1.price);
+</script>
+</body>
+</html>

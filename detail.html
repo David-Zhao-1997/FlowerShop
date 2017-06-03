@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Objects.js"></script>
+</head>
+<body>
+<h1 id="title"></h1>
+<h2 id="price"></h2>
+<div id="detail"></div>
+<script>
+    var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
+    var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
+    var price = priceArr[no - 1];
+    //    alert(price);
+    var detail = detailArr[no - 1];
+    //    alert(detail);
+    document.getElementById("title").innerHTML = clickedPic;
+    document.getElementById("detail").innerHTML = detail;
+    document.getElementById("price").innerHTML = "￥" + price;
+    var frame2 = window.parent.document.getElementById("iFrame2");
+    frame2.height = document.body.clientHeight + 50;
+    //    alert(document.body.clientHeight);
+</script>
+</body>
+</html>

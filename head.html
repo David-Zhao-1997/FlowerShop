@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>head</title>
+    <style>
+        * {
+            background-color: lightsalmon;
+        }
+
+        #headBar {
+            margin-right: 40px;
+        }
+
+        #headBar a {
+            margin: 20px;
+            float: right;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="headBar">
+    <a id="btn1" href=""
+       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">按钮1</a>
+    <a id="btn2" href=""
+       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">按钮2</a>
+    <a id="btn3" href=""
+       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">按钮3</a>
+    <a id="btn4" href=""
+       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',4);">按钮4</a>
+    <a id="btn5" href=""
+       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',5);">按钮5</a>
+</div>
+</body>
+</html>
