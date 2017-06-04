@@ -75,7 +75,7 @@
     <div class="breadcrumbs">首页 > 鲜花</div>
     <div class="productWrapper">
         <div id="intro">
-            <h3 id="title"></h3>
+            <h4 id="title"></h4>
             <hr>
             <dl id="inf">
                 <dt>类 别：鲜花</dt>
@@ -104,6 +104,11 @@
 </div>
 <div id="detail"></div>
 <script>
+    var album = document.getElementById("album");
+    var newLi = document.createElement("li");
+    var newImg = document.createElement("img");
+</script>
+<script>
     $(function () {
         $('#album').viewer({
             url: 'data-original'
@@ -122,6 +127,5 @@
     var frame2 = window.parent.document.getElementById("iFrame2");
     frame2.height = document.body.clientHeight + 50;
 </script>
-
 </body>
 </html>
