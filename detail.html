@@ -70,12 +70,12 @@
         <header>
             <h3 id="title"></h3>
             <hr>
-            <dd id="inf">
-                <dl>类 别：鲜花</dl>
-                <dl>包 装：精美包装</dl>
-                <dl>附 送：免费附送精美贺卡</dl>
-                <dl>配 送：全国</dl>
-            </dd>
+            <dl id="inf">
+                <dt>类 别：鲜花</dt>
+                <dt>包 装：精美包装</dt>
+                <dt>附 送：免费附送精美贺卡</dt>
+                <dt>配 送：全国</dt>
+            </dl>
             <hr>
             <h2 id="price"></h2>
         </header>
@@ -107,18 +107,13 @@
     var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
     var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
     var price = priceArr[no - 1];
-    //    alert(price);
     var detail = detailArr[no - 1];
-
     var floName = floNameArr[no - 1];
-    //    alert(detail);
     document.getElementById("title").innerHTML = floName;
     document.getElementById("detail").innerHTML = detail;
     document.getElementById("price").innerHTML = "￥" + price;
     var frame2 = window.parent.document.getElementById("iFrame2");
     frame2.height = document.body.clientHeight + 50;
-    //    alert(document.body.clientHeight);
-
 </script>
 
 </body>
