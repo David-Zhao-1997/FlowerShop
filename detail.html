@@ -8,10 +8,10 @@
     <script src="js/viewer-jquery.min.js"></script>
     <link rel="stylesheet" href="css/viewer.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+        /** {*/
+        /*margin: 0;*/
+        /*padding: 0;*/
+        /*}*/
 
         #album {
             width: 500px;
@@ -41,15 +41,8 @@
             margin-bottom: 40px;
             margin-left: auto;
             margin-right: auto;
-            /*padding: 30px;*/
+            padding: 30px;
             border: 1px solid #d9d9d9;
-        }
-
-        header {
-            float: right;
-            margin-top: 40px;
-            margin-right: 40px;
-            padding: 35px;
         }
 
         #inf {
@@ -58,16 +51,30 @@
             color: #737373;
         }
 
+        #inf dt {
+            padding: 2px;
+        }
+
         #price {
             color: #ff6a00;
+        }
+
+        #intro {
+            float: right;
+            margin-top: 40px;
+            margin-right: 40px;
+        }
+
+        .breadcrumbs {
+            margin: 4px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div>首页 > 鲜花</div>
+    <div class="breadcrumbs">首页 > 鲜花</div>
     <div class="productWrapper">
-        <header>
+        <div id="intro">
             <h3 id="title"></h3>
             <hr>
             <dl id="inf">
@@ -78,7 +85,7 @@
             </dl>
             <hr>
             <h2 id="price"></h2>
-        </header>
+        </div>
         <ul id="album">
             <li><img data-original="img/tibet-1.jpg" src="img/thumbnails/tibet-1.jpg" alt="图片1">
             </li>
