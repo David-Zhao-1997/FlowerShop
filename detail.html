@@ -3,26 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="Objects.js"></script>
+    <script src="js/Objects.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/viewer-jquery.min.js"></script>
+    <link rel="stylesheet" href="css/viewer.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #album {
+            width: 500px;
+            /*margin: 0 auto;*/
+            font-size: 0;
+        }
+
+        #album li {
+            display: inline-block;
+            width: 32%;
+            margin-left: 1%;
+            padding-top: 1%;
+        }
+
+        #album li img {
+            width: 100%;
+        }
+
+        .container {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .productWrapper {
+            width: 1200px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            /*padding: 30px;*/
+            border: 1px solid #d9d9d9;
+        }
+
+        header {
+            float: right;
+            margin-top: 40px;
+            margin-right: 40px;
+            padding: 35px;
+        }
+
+        #inf {
+            font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+            font-size: 12px;
+            color: #737373;
+        }
+
+        #price {
+            color: #ff6a00;
+        }
+    </style>
 </head>
 <body>
-<h1 id="title"></h1>
-<h2 id="price"></h2>
+<div class="container">
+    <div>首页 > 鲜花</div>
+    <div class="productWrapper">
+        <header>
+            <h3 id="title"></h3>
+            <hr>
+            <dd id="inf">
+                <dl>类 别：鲜花</dl>
+                <dl>包 装：精美包装</dl>
+                <dl>附 送：免费附送精美贺卡</dl>
+                <dl>配 送：全国</dl>
+            </dd>
+            <hr>
+            <h2 id="price"></h2>
+        </header>
+        <ul id="album">
+            <li><img data-original="img/tibet-1.jpg" src="img/thumbnails/tibet-1.jpg" alt="图片1">
+            </li>
+            <li><img data-original="img/tibet-2.jpg" src="img/thumbnails/tibet-2.jpg" alt="图片2">
+            </li>
+            <li><img data-original="img/tibet-3.jpg" src="img/thumbnails/tibet-3.jpg" alt="图片3">
+            </li>
+            <li><img data-original="img/tibet-4.jpg" src="img/thumbnails/tibet-4.jpg" alt="图片4">
+            </li>
+            <li><img data-original="img/tibet-5.jpg" src="img/thumbnails/tibet-5.jpg" alt="图片5">
+            </li>
+            <li><img data-original="img/tibet-6.jpg" src="img/thumbnails/tibet-6.jpg" alt="图片6">
+            </li>
+        </ul>
+    </div>
+</div>
 <div id="detail"></div>
+<script>
+    $(function () {
+        $('#album').viewer({
+            url: 'data-original'
+        });
+    });
+</script>
 <script>
     var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
     var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
     var price = priceArr[no - 1];
     //    alert(price);
     var detail = detailArr[no - 1];
+
+    var floName = floNameArr[no - 1];
     //    alert(detail);
-    document.getElementById("title").innerHTML = clickedPic;
+    document.getElementById("title").innerHTML = floName;
     document.getElementById("detail").innerHTML = detail;
     document.getElementById("price").innerHTML = "￥" + price;
     var frame2 = window.parent.document.getElementById("iFrame2");
     frame2.height = document.body.clientHeight + 50;
     //    alert(document.body.clientHeight);
-    
+
 </script>
+
 </body>
 </html>
