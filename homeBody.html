@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homeBody</title>
+    <style>
+        /** {
+            background-color: lightgreen;
+        }*/
+        body {
+            text-align: center;
+            width: 100%;
+            margin: auto;
+
+            border: 2px solid black;
+        }
+
+        .flowerItem {
+            height: 240px;
+            width: 220px;
+            border: 1px solid lightslategray;
+
+        }
+
+        #categoryTab {
+            background-color: blueviolet;
+            width: 1240px;
+            height: 30px;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        .categoryTabItem {
+            width: 308px;
+            height: 28px;
+            border: 1px solid black;
+            display: block;
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        #scrollingPic {
+            width: 80%;
+            height: 400px;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        #flowerGroup1 {
+            width: 80%;
+            height: 365px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: left;
+        }
+
+        #flowerGroup2 {
+            width: 80%;
+            height: 365px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: left;
+        }
+
+        #quick_links_panel {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 34px;
+            background-color: #595656;
+            height: 100%;
+        }
+    </style>
+</head>
+<body onload="resize()">
+<div id="quick_links_panel">
+    dfgudfgh
+</div>
+<img src="bgSlogan.jpg" style="background-repeat: repeat-x;width: 100%;height: 110px;">
+
+<div id="categoryTab">
+    <div class="categoryTabItem">
+        <a href="#">Fresh Flower</a>
+    </div>
+    <div class="categoryTabItem">
+        <a href="#">Preserved Flower</a>
+    </div>
+    <div class="categoryTabItem">
+        <a href="#">Chocolate</a>
+    </div>
+    <div class="categoryTabItem">
+        <a href="#">Cake</a>
+    </div>
+</div>
+
+<div id="scrollingPic">
+    <img src="bgimg.jpg" height="400px" width="100%">
+</div>
+
+<div id="flowerGroup1">
+    <h1>Best Seller</h1>
+    <br>
+    <a id="flower1" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+    <a id="flower2" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+    <a id="flower3" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+    <a id="flower4" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+    <a id="flower5" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+</div>
+<div id="flowerGroup2">
+    <h1>We recommand you</h1>
+    <br>
+    <a id="flower6" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+    <a id="flower7" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+                                                    alt=""></a>
+</div>
+<script>
+    var frame2 = window.parent.document.getElementById("iFrame2");
+    frame2.height = document.body.clientHeight + 20;
+
+    function resize()
+    {
+        var frame2 = window.parent.document.getElementById("iFrame2");
+        frame2.height = document.body.clientHeight + 20;
+    }
+
+    function picClicked(img)
+    {
+        sessionStorage.setItem("clickedPic", img.id);
+        window.parent.bodyFrame.location = "detail.html";
+    }
+</script>
+
+
+</body>
+</html>
