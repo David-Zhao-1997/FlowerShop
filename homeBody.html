@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:url" content="http://dolphin.com/happy-new-year/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="In 2016,you will get a gift - Dolphin Browser"/>
+    <meta property="og:description"
+          content="Enter your name and see what you might encounter in the new year."/>
+    <meta property="og:image" content="images/share-logo.png"/>
     <meta charset="UTF-8">
     <title>homeBody</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <style>
         /** {
             background-color: lightgreen;
         }*/
+        .jtico {
+            font-size: 14px;
+        }
+
         body {
             text-align: center;
             width: 100%;
             margin: auto;
+            background-image: url(pic/bgall.gif);
+            background-repeat: repeat;
+        }
 
-            border: 2px solid black;
+        #quick_links_panel {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 34px;
+            background-color: #595656;
+            height: 100%;
         }
 
         .flowerItem {
             height: 240px;
             width: 220px;
-            border: 1px solid lightslategray;
-
+            border: 1px solid #949494;
+            margin-right: -5px;
         }
 
         #categoryTab {
             background-color: blueviolet;
             width: 1240px;
             height: 30px;
-            border: 1px solid black;
             margin: auto;
         }
 
         .categoryTabItem {
             width: 308px;
             height: 28px;
-            border: 1px solid black;
+            border: 1px solid #747474;
             display: block;
             float: left;
+
+        }
+
+        :hover.categoryTabItem {
+            background-color: white;
         }
 
         a {
@@ -50,88 +75,229 @@
             margin: auto;
         }
 
-        #flowerGroup1 {
-            width: 80%;
+        .flowerGroup {
+            width: 1129px;
             height: 365px;
-            border: 1px solid black;
+
             margin: auto;
             text-align: left;
         }
 
-        #flowerGroup2 {
-            width: 80%;
-            height: 365px;
-            border: 1px solid black;
-            margin: auto;
-            text-align: left;
-        }
-
-        #quick_links_panel {
-            position: fixed;
+        .quick_links {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -190px;
             z-index: 2;
-            top: 0;
-            right: 0;
             width: 34px;
-            background-color: #595656;
-            height: 100%;
         }
+
+        #login_icon {
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            vertical-align: top;
+        }
+
+        #shoppingcart_icon {
+            border: 1px solid #aaaaaa;
+            position: absolute;
+            display: inline-block;
+            top: 35px;
+            left: 0;
+            width: 34px;
+            height: 100px;
+            cursor: pointer;
+            margin: 7px 0;
+            vertical-align: 20px;
+            padding-top: 50px;
+        }
+
+        #headset_icon {
+            position: absolute;
+            display: inline-block;
+            top: 200px;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            margin: 7px 0;
+            vertical-align: 20px;
+        }
+
+        span {
+            font-size: 40px;
+            font-family: tahoma, arial, 'Hiragino Sans GB', '\5FAE\8F6F\96C5\9ED1', sans-serif;
+            color: #737373;
+        }
+
+        .sub {
+            padding: 30px;
+            text-align: left;
+            display: none;
+            position: relative;
+            height: 150px;
+            width: 248px;
+            z-index: 3;
+            left: 0;
+            top: 7px;
+            background-color: white;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+
+
     </style>
+    <script type="text/javascript">
+        function subShow(div)
+        {
+            var a = div.childNodes;
+            a[1].style.display = "block";
+        }
+
+        function subHide(div)
+        {
+            var a = div.childNodes;
+            a[1].style.display = "none";
+        }
+    </script>
 </head>
 <body onload="resize()">
-<div id="quick_links_panel">
-    dfgudfgh
-</div>
-<img src="bgSlogan.jpg" style="background-repeat: repeat-x;width: 100%;height: 110px;">
+<!--<img src="bgSlogan.jpg" style="background-repeat: repeat-x;width: 100%;height: 110px;">-->
 
 <div id="categoryTab">
-    <div class="categoryTabItem">
-        <a href="#">Fresh Flower</a>
+    <div>
+        <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
+            Fresh Flower
+            <div id="freshFlowerSub" class="sub">
+                <nav>
+                    <a href="#">Rose</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Lily</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Violet</a>
+                    <br>
+                    <br>
+                    <a href="#">Tulip</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Cosmos</a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Canna</a>
+                </nav>
+            </div>
+        </div>
     </div>
-    <div class="categoryTabItem">
-        <a href="#">Preserved Flower</a>
+    <div>
+        <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
+            Preserved Flower
+            <div id="perservedFlowerSub" class="sub">
+                <nav>
+                    <a href="#">Rose</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Lily</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Violet</a>
+                    <br>
+                    <br>
+                    <a href="#">Tulip</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Cosmos</a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Canna</a>
+                </nav>
+            </div>
+        </div>
     </div>
-    <div class="categoryTabItem">
-        <a href="#">Chocolate</a>
+    <div>
+        <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
+            Chocolate
+            <div id="chocolateSub" class="sub">
+                <nav>
+                    <a href="#">Dark</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Milk</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Hazelnut</a>
+                    <br>
+                    <br>
+                    <a href="#">Mint</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Mocha</a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Almond</a>
+                </nav>
+            </div>
+        </div>
     </div>
-    <div class="categoryTabItem">
-        <a href="#">Cake</a>
+    <div>
+        <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
+            Cake
+            <div id="cakeSub" class="sub">
+                <nav>
+                    <a href="#">Blue Cheese</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Apple</a>
+                    <br>
+                    <br>
+                    <a href="#">Tiramisu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Chocolate</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <br>
+                    <br>
+                    <a href="#">Butter</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <a href="#">Cupcake</a>
+                </nav>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="scrollingPic">
-    <img src="bgimg.jpg" height="400px" width="100%">
+    <img src="pic/bgimg.jpg" height="400px" width="100%">
 </div>
-
-<div id="flowerGroup1">
-    <h1>Best Seller</h1>
+<div class="flowerGroup">
+    <span>Best Seller</span>
     <br>
-    <a id="flower1" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower1" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f1.jpg"
                                                     alt=""></a>
-    <a id="flower2" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower2" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f2.jpg"
                                                     alt=""></a>
-    <a id="flower3" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower3" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f3.jpg"
                                                     alt=""></a>
-    <a id="flower4" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower4" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f4.jpg"
                                                     alt=""></a>
-    <a id="flower5" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower5" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f5.jpg"
                                                     alt=""></a>
 </div>
-<div id="flowerGroup2">
-    <h1>We recommand you</h1>
+<div class="flowerGroup">
+    <span>We recommand you</span>
     <br>
-    <a id="flower6" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower6" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f6.jpg"
                                                     alt=""></a>
-    <a id="flower7" onclick="picClicked(this)"><img class="flowerItem" src="pic/sampleFlower.jpg"
+    <a id="flower7" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f7.jpg"
                                                     alt=""></a>
+    <a id="flower8" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f8.jpg"
+                                                    alt=""></a>
+    <a id="flower9" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f9.jpg"
+                                                    alt=""></a>
+    <a id="flower10" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f10.jpg"
+                                                     alt=""></a>
+</div>
+<div class="flowerGroup">
+    <span>Valentine Sale</span>
+    <br>
+    <a id="flower11" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f11.jpg"
+                                                     alt=""></a>
+    <a id="flower12" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f12.jpg"
+                                                     alt=""></a>
+    <a id="flower13" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f13.jpg"
+                                                     alt=""></a>
+    <a id="flower14" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f14.jpg"
+                                                     alt=""></a>
+    <a id="flower15" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f15.jpg"
+                                                     alt=""></a>
 </div>
 <script>
     var frame2 = window.parent.document.getElementById("iFrame2");
-    frame2.height = document.body.clientHeight + 20;
+    frame2.height = document.body.clientHeight + 75;
 
     function resize()
     {
         var frame2 = window.parent.document.getElementById("iFrame2");
-        frame2.height = document.body.clientHeight + 20;
+        frame2.height = document.body.clientHeight + 75;
     }
 
     function picClicked(img)
@@ -140,7 +306,84 @@
         window.parent.bodyFrame.location = "detail.html";
     }
 </script>
-
+<div id="quick_links_panel">
+    <div class="quick_links">
+        <li id="login_icon">
+            <a href="loginPage.html">
+                <img src="img/icons/login_icon.png">
+            </a>
+        </li>
+        <li id="shoppingcart_icon">
+            <a href="#">
+                <img src="img/icons/shoppingcart_icon.png">
+                <div id="shoppingcartText">Cart</div>
+            </a>
+        </li>
+        <li id="headset_icon">
+            <a href="#">
+                <img src="img/icons/headset_icon.png">
+            </a>
+        </li>
+    </div>
+</div>
+<br><br><br><br><br>
+<div class="page">
+    <section class="demo">
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="tencent://message/?uin=550361254">
+						<span>
+							QQ
+						</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?
+        url=http%3A%2F%2Fdolphin.com%2Fhappy-new-year%2F &
+        text="
+                       target="_blank" id="J-share-twitter">
+						<span>
+							Twitter
+						</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loginPage.html">
+						<span>
+							WeChat
+						</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?
+       u=http%3A%2F%2Fdolphin.com%2Fhappy-new-year%2F &
+       t=Enter%20your%20name%20and%20see%20what%20you%20might%20encounter%20in%20the%20new%20year."
+                       target="_blank" id="J-share-facebook">
+						<span>
+							FaceBook
+						</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.jiathis.com/share"
+                       class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+                       target="_blank">
+                            <span class="jiathis_txt">
+							Weibo
+						</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</div>
+</div>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+<div style="text-align:center;clear:both;margin-top:50px">
+    <script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+    <script src="/follow.js" type="text/javascript"></script>
+</div>
 
 </body>
 </html>

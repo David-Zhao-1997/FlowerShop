@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style type="text/css">
+        #loginTab {
+            width: 100px;
+            height: 48px;
+            border-bottom: 2px solid green;
+            display: block;
+            position: relative;
+            float: left;
+        }
+
+        #registerTab {
+            width: 100px;
+            height: 48px;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            text-align: center;
+            float: left;
+            display: block;
+        }
+
+        a {
+            vertical-align: middle;
+            padding: 0px;
+            color: #ff6a00;
+            text-decoration: none;
+        }
+
+        #login-tab {
+            margin-bottom: 15px;
+            padding: 0;
+            width: 380px;
+            height: 48px;
+            list-style: none;
+            border-bottom: 2px solid #d9d9d9;
+            margin: 15px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #loginContainer {
+            position: absolute;
+            left: 38%;
+            top: 20px;
+            height: 350px;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .lowerMiddle {
+            height: 820px;
+            width: 100%;
+            background: white url(pic/loginBgc.jpg) 50% 0 no-repeat;
+            background-position-y: 120px;
+            margin: auto;
+        }
+
+        .validation {
+            position: relative;
+            top: 30px;
+        }
+
+        #loginButton {
+            position: relative;
+            width: 350px;
+            height: 50px;
+            margin: 0 auto;
+            top: 60px;
+        }
+
+        input {
+            margin: 0 auto;
+            width: 90%;
+            height: 40px;
+        }
+
+        #loginButton {
+            background-color: dodgerblue;
+        }
+    </style>
+    <script type="text/javascript">
+        function validate()
+        {
+            var username = document.getElementById("username").value.toLowerCase();
+            var password = document.getElementById("password").value;
+            if (username != "")
+            {
+                if (password != "")
+                {
+                    if (username == "william" && password == "123456")
+                    {
+                        alert("Login Success");
+                        localStorage.setItem("currentUser", "william");
+                    }
+                    else if (username == "david" && password == "123456")
+                    {
+                        alert("Login Success");
+                        localStorage.setItem("currentUser", "david");
+                    }
+                    else if (username == "athena" && password == "123456")
+                    {
+                        alert("Login Success");
+                        localStorage.setItem("currentUser", "athena");
+                    }
+                    else if (sessionStorage.getItem(username) == password)
+                    {
+                        alert("Login Success");
+                        localStorage.setItem("currentUser", username);
+                    }
+                    else
+                    {
+                        alert("Username and password are not matched, please check!");
+                    }
+                }
+                else
+                {
+                    alert("Please enter your password!");
+                }
+            }
+            else
+            {
+                alert("Please enter username!");
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="lowerMiddle">
+    <div id="loginContainer">
+        <div id="login-tab">
+            <a href="#">
+                <div id="loginTab">Login</div>
+            </a>
+            <a href="registerPage.html">
+                <div id="registerTab">Register</div>
+            </a>
+        </div>
+        <div class="validation">
+            <input type="text" id="username" name="UserName" autocomplete="off"
+                   placeholder="Username">
+            <br>
+            <br>
+            <input type="password" id="password" name="Password" autocomplete="off"
+                   placeholder="Password">
+        </div>
+        <button id="loginButton" type="button" onclick="validate()">Login</button>
+    </div>
+</div>
+</body>
+</html>

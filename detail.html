@@ -21,23 +21,24 @@
 
         #album li {
             display: inline-block;
-            width: 32%;
+            width: 35%;
             margin-left: 1%;
             padding-top: 1%;
         }
 
         #album li img {
             width: 100%;
+            cursor: pointer;
         }
 
         .container {
-            width: 1200px;
+            width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .productWrapper {
-            width: 1200px;
+            width: 1000px;
             margin-bottom: 40px;
             margin-left: auto;
             margin-right: auto;
@@ -68,14 +69,27 @@
         .breadcrumbs {
             margin: 4px;
         }
+
+        #addToCart {
+            background-color: #ff6a00;
+            height: 50px;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #addToCart > span {
+            color: #fff;
+            line-height: 50px;
+        }
     </style>
 </head>
-<body>
+<body onload="reSize()">
 <div class="container">
     <div class="breadcrumbs">首页 > 鲜花</div>
     <div class="productWrapper">
         <div id="intro">
-            <h4 id="title"></h4>
+            <h4 id="title">鲜花标题</h4>
             <hr>
             <dl id="inf">
                 <dt>类 别：鲜花</dt>
@@ -84,29 +98,31 @@
                 <dt>配 送：全国</dt>
             </dl>
             <hr>
-            <h2 id="price"></h2>
+            <h2 id="price">￥100</h2>
+
+            <button id="addToCart" onclick="addToCart()">加入购物车</button>
+
         </div>
-        <ul id="album">
-            <li><img data-original="img/tibet-1.jpg" src="img/thumbnails/tibet-1.jpg" alt="图片1">
-            </li>
-            <li><img data-original="img/tibet-2.jpg" src="img/thumbnails/tibet-2.jpg" alt="图片2">
-            </li>
-            <li><img data-original="img/tibet-3.jpg" src="img/thumbnails/tibet-3.jpg" alt="图片3">
-            </li>
-            <li><img data-original="img/tibet-4.jpg" src="img/thumbnails/tibet-4.jpg" alt="图片4">
-            </li>
-            <li><img data-original="img/tibet-5.jpg" src="img/thumbnails/tibet-5.jpg" alt="图片5">
-            </li>
-            <li><img data-original="img/tibet-6.jpg" src="img/thumbnails/tibet-6.jpg" alt="图片6">
-            </li>
-        </ul>
+        <ul id="album"></ul>
     </div>
 </div>
 <div id="detail"></div>
 <script>
     var album = document.getElementById("album");
-    var newLi = document.createElement("li");
-    var newImg = document.createElement("img");
+    /*动态创建图片元素*/
+    var thumbnailPath = "img/tibet-";
+    var sourcePath = "img/thumbnails/tibet-";
+    for (var i = 1; i <= 4; i++)
+    {
+        var newLi = document.createElement("li");
+        var img = document.createElement("img");
+        img.setAttribute("data-original", thumbnailPath + i + ".jpg");
+        img.setAttribute("src", sourcePath + i + ".jpg");
+        img.setAttribute("alt", "图片" + i);
+        img.setAttribute("onclick", "window.parent.scrollTo(0,120);");
+        newLi.appendChild(img);
+        album.appendChild(newLi);
+    }
 </script>
 <script>
     $(function () {
@@ -115,17 +131,51 @@
         });
     });
 </script>
-<script>
-    var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
-    var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
-    var price = priceArr[no - 1];
-    var detail = detailArr[no - 1];
-    var floName = floNameArr[no - 1];
-    document.getElementById("title").innerHTML = floName;
-    document.getElementById("detail").innerHTML = detail;
-    document.getElementById("price").innerHTML = "￥" + price;
+<script>function getNum(text)
+{
+    var value = text.replace(/[^0-9]/ig, "");
+    return value;
+}
+
+function reSize()
+{
     var frame2 = window.parent.document.getElementById("iFrame2");
-    frame2.height = document.body.clientHeight + 50;
+    frame2.height = document.body.clientHeight + 120;
+}
+
+var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
+//        var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
+var no = getNum(clickedPic);
+//alert(no);
+var price = priceArr[no - 1];
+//alert(price);
+var detail = detailArr[no - 1];
+var floName = floNameArr[no - 1];
+document.getElementById("title").innerHTML = floName;
+document.getElementById("detail").innerHTML = detail;
+document.getElementById("price").innerHTML = "￥" + price;
+
+
+function addToCart()
+{
+    var cartItems = [];
+    if (localStorage.getItem("cartItems") != null)
+    {
+        cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    }
+    if ($.inArray(no - 1, cartItems))
+    {
+        cartItems.splice(0, 0, no - 1);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        alert("添加购物车成功");
+    }
+    else
+    {
+        alert("已加入购物车 请勿重复添加");
+    }
+}
+
+window.parent.scrollTo(0, 0);
 </script>
 </body>
 </html>

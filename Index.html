@@ -10,7 +10,7 @@
 <iframe name="headFrame" id="iFrame1" width="100%" height="100" src="head.html" name="HeaderFrame"
         src=""
         frameborder="0"></iframe>
-<iframe name="bodyFrame" id="iFrame2" width="100%" height="400" src="body.html"
+<iframe name="bodyFrame" id="iFrame2" width="100%" height="400" src="homeBody.html"
         name="NavigationFrame"
         frameborder="0"></iframe>
 <iframe name="footFrame" id="iFrame3" width="100%" height="100" src="foot.html" name="ContentFrame2"
@@ -24,9 +24,8 @@
     //    frame2.height = document.body.clientHeight * 0.7;
     //    frame3.height = document.body.clientHeight * 0.14;
 
-        var name = ['flower1', 'flower2', 'flower3'];
-        sessionStorage.setItem("name", name);
-
+    var name = ['flower1', 'flower2', 'flower3'];
+    sessionStorage.setItem("name", name);
 </script>
 <button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">test1
 </button>
