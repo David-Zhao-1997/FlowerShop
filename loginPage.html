@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <style type="text/css">
+        input, button {
+            border-radius: 5px;
+            border: 1px #c6c6c6 solid;
+        }
+
         #loginTab {
             width: 100px;
             height: 48px;
@@ -45,20 +50,24 @@
 
         #loginContainer {
             position: absolute;
-            left: 38%;
+            left: 60%;
             top: 20px;
             height: 350px;
             width: 400px;
             padding: 20px;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+
         }
 
         .lowerMiddle {
             height: 820px;
             width: 100%;
-            background: white url(pic/loginBgc.jpg) 50% 0 no-repeat;
-            background-position-y: 120px;
+            /*background: white url(test.jpg) 50% 0 no-repeat;*/
+            /*background-position-y: 120px;*/
             margin: auto;
+            background: transparent;
         }
 
         .validation {
@@ -85,6 +94,16 @@
         }
     </style>
     <script type="text/javascript">
+
+
+        function jump()
+        {
+            if (sessionStorage.getItem("guestFlag") == "true")
+            {
+                window.parent.bodyFrame.location = "homeBody.html";
+            }
+        }
+
         function validate()
         {
             var username = document.getElementById("username").value.toLowerCase();
@@ -96,22 +115,22 @@
                     if (username == "william" && password == "123456")
                     {
                         alert("Login Success");
-                        localStorage.setItem("currentUser", "william");
+                        sessionStorage.setItem("currentUser", "william");
                     }
                     else if (username == "david" && password == "123456")
                     {
                         alert("Login Success");
-                        localStorage.setItem("currentUser", "david");
+                        sessionStorage.setItem("currentUser", "david");
                     }
                     else if (username == "athena" && password == "123456")
                     {
                         alert("Login Success");
-                        localStorage.setItem("currentUser", "athena");
+                        sessionStorage.setItem("currentUser", "athena");
                     }
                     else if (sessionStorage.getItem(username) == password)
                     {
                         alert("Login Success");
-                        localStorage.setItem("currentUser", username);
+                        sessionStorage.setItem("currentUser", username);
                     }
                     else
                     {
@@ -130,7 +149,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="jump()">
 <div class="lowerMiddle">
     <div id="loginContainer">
         <div id="login-tab">

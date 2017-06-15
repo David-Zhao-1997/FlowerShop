@@ -5,33 +5,77 @@
     <title></title>
     <script src="js/jQuery.js"></script>
     <script src="js/Objects.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="bgstretcher.css" />
+
+    <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="bgstretcher.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            //  Initialize Backgound Stretcher
+            $('BODY').bgStretcher({
+                images: ['images/sample-1.jpg', 'images/sample-2.jpg', 'images/sample-3.jpg', 'images/sample-4.jpg', 'images/sample-5.jpg', 'images/sample-6.jpg'],
+                imageWidth: 1024,
+                imageHeight: 768,
+                slideDirection: 'N',
+                slideShowSpeed: 1000,
+                transitionEffect: 'fade',
+                sequenceMode: 'normal',
+                buttonPrev: '#prev',
+                buttonNext: '#next',
+                pagination: '#nav',
+                anchoring: 'left center',
+                anchoringImg: 'left center'
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            background: url("change1.jpg") no-repeat fixed;
+        }
+    </style>
 </head>
-<body>
-<iframe name="headFrame" id="iFrame1" width="100%" height="100" src="head.html" name="HeaderFrame"
+<body onload="reSize()">
+<script>
+    var cnt = 0;
+
+    var bgcs = ["change1.jpg", "change2.jpg", "meizi3.jpg", "meizi4.jpg"];
+
+    function changeBgc()
+    {
+        $("body").css("background", "url(" + bgcs[cnt % bgcs.length] + ") no-repeat fixed");
+        cnt++;
+    }
+
+</script>
+
+<iframe name="headFrame" allowTransparency="true" id="iFrame1" width="100%" height="100"
+        src="head.html" name="HeaderFrame"
         src=""
         frameborder="0"></iframe>
-<iframe name="bodyFrame" id="iFrame2" width="100%" height="400" src="homeBody.html"
+<iframe name="bodyFrame" allowTransparency="true" id="iFrame2" width="100%" height="400"
+        src="loginPage.html"
         name="NavigationFrame"
         frameborder="0"></iframe>
-<iframe name="footFrame" id="iFrame3" width="100%" height="100" src="foot.html" name="ContentFrame2"
+<iframe name="footFrame" allowTransparency="true" id="iFrame3" width="100%" height="100"
+        src="foot.html" name="ContentFrame2"
         frameborder="0"></iframe>
 <script>
+    function reSize()
+    {
+        var frame2 = window.parent.document.getElementById("iFrame2");
+        frame2.height = document.body.clientHeight + 120;
+//        window.setInterval(changeBgc, 3500);
+    }
+
     var frame1 = document.getElementById("iFrame1");
     var frame2 = document.getElementById("iFrame2");
-    alert(window.bodyFrame.body.clientHeight);
     var frame3 = document.getElementById("iFrame3");
-    //    frame1.height = document.body.clientHeight * 0.1;
-    //    frame2.height = document.body.clientHeight * 0.7;
-    //    frame3.height = document.body.clientHeight * 0.14;
-
-    var name = ['flower1', 'flower2', 'flower3'];
-    sessionStorage.setItem("name", name);
 </script>
-<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">test1
-</button>
-<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">test2
-</button>
-<button onclick="window.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">test3
 </button>
 </body>
 </html>

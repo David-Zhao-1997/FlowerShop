@@ -9,21 +9,100 @@
     <meta property="og:image" content="images/share-logo.png"/>
     <meta charset="UTF-8">
     <title>homeBody</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+    <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;hahahahaha &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
     <style>
-        /** {
-            background-color: lightgreen;
-        }*/
+        html, body {
+            /*background: #d8abcd;*/
+            margin: 0;
+        }
+
+        body {
+            /*border-top: 4px solid #d8abcd;*/
+            background: transparent;
+
+        }
+
+        .content {
+            color: #777;
+            font: 12px/1.4 "helvetica neue", arial, sans-serif;
+            width: 620px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #ddd;
+            margin: 0;
+        }
+
+        p {
+            margin: 0 0 20px
+        }
+
+        a {
+            color: #22BCB9;
+            text-decoration: none;
+        }
+
+        .cred {
+            margin-top: 20px;
+            font-size: 11px;
+        }
+
+        /* This rule is read by Galleria to define the gallery height: */
+        #galleria {
+            height: 300px;
+            background: #d8abcd;
+        }
+
+
+    </style>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="galleria-1.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Load the classic theme
+            Galleria.loadTheme('galleria.classic.min.js');
+            // Initialize Galleria
+            Galleria.run('#galleria');
+        });
+
+    </script>
+    <script>
+        var cnt = 0;
+        var bgcs = ["change1.jpg", "change2.jpg", "meizi3.jpg", "meizi4.jpg"];
+
+        function changeBgc()
+        {
+            $("body").css("background", "url(" + bgcs[cnt % bgcs.length] + ")");
+            cnt++;
+        }
+
+        // window.setInterval(changeBgc, 2000);
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <style>
+        #shangmiandebiankuang {
+            margin: 0px;
+            padding: 0px;
+            border-radius: 50px;
+        }
+
         .jtico {
             font-size: 14px;
         }
 
+        /** {
+            background-color: lightgreen;
+        }*/
         body {
             text-align: center;
             width: 100%;
             margin: auto;
-            background-image: url(pic/bgall.gif);
-            background-repeat: repeat;
+            /*background-image: url(pic/bgall.gif);*/
         }
 
         #quick_links_panel {
@@ -32,7 +111,7 @@
             top: 0;
             right: 0;
             width: 34px;
-            background-color: #595656;
+            background-color: #d8abcd;
             height: 100%;
         }
 
@@ -44,23 +123,26 @@
         }
 
         #categoryTab {
-            background-color: blueviolet;
+            background-color: #fbdeff;
             width: 1240px;
             height: 30px;
+            border-radius: 4px;
             margin: auto;
         }
 
         .categoryTabItem {
             width: 308px;
             height: 28px;
-            border: 1px solid #747474;
+            border: 1px solid #d8abcd;
             display: block;
             float: left;
+            text-align: center;
 
         }
 
         :hover.categoryTabItem {
-            background-color: white;
+            background-color: #be607e;
+            opacity: 0.8;
         }
 
         a {
@@ -71,7 +153,7 @@
         #scrollingPic {
             width: 80%;
             height: 400px;
-            border: 1px solid black;
+            border: 1px solid #d8abcd;
             margin: auto;
         }
 
@@ -88,7 +170,7 @@
             top: 50%;
             left: 0;
             margin-top: -190px;
-            z-index: 2;
+            z-index: 5;
             width: 34px;
         }
 
@@ -144,38 +226,141 @@
             width: 248px;
             z-index: 3;
             left: 0;
-            top: 7px;
-            background-color: white;
+            top: 3px;
+            background-color: black;
+            opacity: 0.6;
         }
 
-        a {
-            cursor: pointer;
+        .logAthe {
+            padding: 0px;
+            text-align: left;
+            display: none;
+            position: relative;
+            height: 150px;
+            width: 200px;
+            float: left;
+            z-index: 3;
+            left: -200px;
+            top: -10px;
+            background-color: #f4aeff;
+            opacity: 0.6;
         }
 
+        .headset_iconAthe {
+            padding: 0px;
+            text-align: left;
+            display: none;
+            position: relative;
+            height: 150px;
+            width: 200px;
+            float: left;
+            z-index: 3;
+            left: -200px;
+            top: -10px;
+            background-color: lavender;
+            opacity: 0.8;
+        }
 
+        .shoppingcart_iconAthe {
+            padding: 0px;
+            text-align: left;
+            display: none;
+            position: relative;
+            height: 150px;
+            width: 200px;
+            float: left;
+            z-index: 3;
+            left: -200px;
+            top: -10px;
+            background-color: lavender;
+            opacity: 0.8;
+        }
+
+        .ff {
+            font-family: "Comic Sans MS", serif;
+            font-size: large;
+        }
 
     </style>
     <script type="text/javascript">
         function subShow(div)
         {
             var a = div.childNodes;
-            a[1].style.display = "block";
+            a[3].style.display = "block";
         }
 
         function subHide(div)
         {
             var a = div.childNodes;
-            a[1].style.display = "none";
+            a[3].style.display = "none";
         }
     </script>
 </head>
 <body onload="resize()">
-<!--<img src="bgSlogan.jpg" style="background-repeat: repeat-x;width: 100%;height: 110px;">-->
+<div id="galleria">
 
+    <a href="img/FloImage/f2.jpg">
+        <img
+                src="img/FloImage/f2.jpg"
+                data-big="flower2.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f3.jpg">
+        <img
+                src="img/FloImage/f3.jpg" ,
+                data-big="f3.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f4.jpg">
+        <img
+                src="img/FloImage/f4.jpg" ,
+                data-big="flower4.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f12.jpg">
+        <img
+                src="img/FloImage/f12.jpg"
+                data-big="flower12.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f13.jpg">
+        <img
+                src="img/FloImage/f13.jpg" ,
+                data-big="flower13.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f14.jpg">
+        <img
+                src="img/FloImage/f14.jpg" ,
+                data-big="flower14.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+    <a href="img/FloImage/f15.jpg">
+        <img
+                src="img/FloImage/f15.jpg" ,
+                data-big="flower15.jpg"
+                data-title="Galaxy s7 edge"
+                data-description="Galaxy s7 edge"
+        >
+    </a>
+</div>
+<!--<img src="bgSlogan.jpg" style="background-repeat: repeat-x;width: 100%;height: 110px;">-->
 <div id="categoryTab">
     <div>
         <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
-            Fresh Flower
+            <p class="ff">Fresh Flower</p>
             <div id="freshFlowerSub" class="sub">
                 <nav>
                     <a href="#">Rose</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -192,7 +377,7 @@
     </div>
     <div>
         <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
-            Preserved Flower
+            <p class="ff">Preserved Flower</p>
             <div id="perservedFlowerSub" class="sub">
                 <nav>
                     <a href="#">Rose</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -209,7 +394,7 @@
     </div>
     <div>
         <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
-            Chocolate
+            <p class="ff">Chocolate</p>
             <div id="chocolateSub" class="sub">
                 <nav>
                     <a href="#">Dark</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -226,7 +411,7 @@
     </div>
     <div>
         <div class="categoryTabItem" onmouseover="subShow(this)" onmouseout="subHide(this)">
-            Cake
+            <p class="ff">Cake</p>
             <div id="cakeSub" class="sub">
                 <nav>
                     <a href="#">Blue Cheese</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -244,15 +429,15 @@
         </div>
     </div>
 </div>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;这是动画——-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
-<div id="scrollingPic">
-    <img src="pic/bgimg.jpg" height="400px" width="100%">
-</div>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;这是动画——-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
 <div class="flowerGroup">
     <span>Best Seller</span>
     <br>
-    <a id="flower1" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f1.jpg"
-                                                    alt=""></a>
+    <a id="flower1" onclick="picClicked(this)" onmouseover="showBorder(this)"
+       onmouseover="hideBorder(this)"><img class="flowerItem" src="sampleFlower.jpg" alt=""></a>
     <a id="flower2" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f2.jpg"
                                                     alt=""></a>
     <a id="flower3" onclick="picClicked(this)"><img class="flowerItem" src="img/FloImage/f3.jpg"
@@ -292,12 +477,12 @@
 </div>
 <script>
     var frame2 = window.parent.document.getElementById("iFrame2");
-    frame2.height = document.body.clientHeight + 75;
+    frame2.height = document.body.clientHeight + 120;
 
     function resize()
     {
         var frame2 = window.parent.document.getElementById("iFrame2");
-        frame2.height = document.body.clientHeight + 75;
+        frame2.height = document.body.clientHeight + 120;
     }
 
     function picClicked(img)
@@ -306,24 +491,84 @@
         window.parent.bodyFrame.location = "detail.html";
     }
 </script>
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;右边栏悬浮&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<script type="text/javascript">
+    function subShowlog(div)
+    {
+        var a = div.childNodes;
+        /* alert(a.length);*/
+        a[1].style.display = "block";
+    }
+
+    function subHidelog(div)
+    {
+        var a = div.childNodes;
+        a[1].style.display = "none";
+    }
+</script>
+
+
 <div id="quick_links_panel">
     <div class="quick_links">
-        <li id="login_icon">
+
+
+        <div>
             <a href="loginPage.html">
-                <img src="img/icons/login_icon.png">
+                <img src="login_icon.png">
             </a>
+            <li id="login_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+                <div class="logAthe">
+                    <nav>
+                        <div>Your details</div>
+                        <br>
+                        <div>Name</div>
+                        <br>
+                        <div>Address</div>
+                        <br>
+                        <div>Your ID :</div>
+                    </nav>
+                </div>
+            </li>
+        </div>
+
+
+        <a href="#">
+            <img src="shoppingcart_icon.png">
+            <div id="shoppingcartText">Cart</div>
+        </a>
+        <li id="shoppingcart_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+
+            <div class="shoppingcart_iconAthe">
+
+                <nav>
+                    <div>Your details</div>
+                    <br>
+                    <div>Name</div>
+                    <br>
+                    <div>Address</div>
+                    <br>
+                    <div>Your ID :</div>
+                </nav>
+            </div>
         </li>
-        <li id="shoppingcart_icon">
-            <a href="#">
-                <img src="img/icons/shoppingcart_icon.png">
-                <div id="shoppingcartText">Cart</div>
-            </a>
+        <a href="#">
+            <img src="headset_icon.png">
+        </a>
+        <li id="headset_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+            <div class="headset_iconAthe">
+                <nav>
+                    <div>Your details</div>
+                    <br>
+                    <div>Name</div>
+                    <br>
+                    <div>Address</div>
+                    <br>
+                    <div>Your ID :</div>
+                </nav>
+            </div>
+
         </li>
-        <li id="headset_icon">
-            <a href="#">
-                <img src="img/icons/headset_icon.png">
-            </a>
-        </li>
+
     </div>
 </div>
 <br><br><br><br><br>
@@ -381,8 +626,8 @@
 </div>
 <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
 <div style="text-align:center;clear:both;margin-top:50px">
-    <script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
-    <script src="/follow.js" type="text/javascript"></script>
+    <!--<script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>-->
+    <!--<script src="/follow.js" type="text/javascript"></script>-->
 </div>
 
 </body>
