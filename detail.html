@@ -84,7 +84,7 @@
         }
 
         h4 {
-            font-family:华文楷体 ;
+            font-family: 华文楷体;
         }
     </style>
 </head>
@@ -113,9 +113,10 @@
 <div id="detail"></div>
 <script>
     var album = document.getElementById("album");
+    var clickedPic = sessionStorage.getItem('clickedPic');
     /*动态创建图片元素*/
-    var thumbnailPath = "img/tibet-";
-    var sourcePath = "img/thumbnails/tibet-";
+    var thumbnailPath = "img/detailImage/"+clickedPic+"/";
+    var sourcePath = "img/detailImage/"+clickedPic+"/";
     for (var i = 1; i <= 4; i++)
     {
         var newLi = document.createElement("li");
@@ -135,51 +136,52 @@
         });
     });
 </script>
-<script>function getNum(text)
-{
-    var value = text.replace(/[^0-9]/ig, "");
-    return value;
-}
-
-function reSize()
-{
-    var frame2 = window.parent.document.getElementById("iFrame2");
-    frame2.height = document.body.clientHeight + 120;
-}
-
-var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
-//        var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
-var no = getNum(clickedPic);
-//alert(no);
-var price = priceArr[no - 1];
-//alert(price);
-var detail = detailArr[no - 1];
-var floName = floNameArr[no - 1];
-document.getElementById("title").innerHTML = floName;
-document.getElementById("detail").innerHTML = detail;
-document.getElementById("price").innerHTML = "￥" + price;
-
-
-function addToCart()
-{
-    var cartItems = [];
-    if (localStorage.getItem("cartItems") != null)
+<script>
+    function getNum(text)
     {
-        cartItems = JSON.parse(localStorage.getItem("cartItems"));
+        var value = text.replace(/[^0-9]/ig, "");
+        return value;
     }
-    if ($.inArray(no - 1, cartItems))
-    {
-        cartItems.splice(0, 0, no - 1);
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        alert("添加购物车成功");
-    }
-    else
-    {
-        alert("已加入购物车 请勿重复添加");
-    }
-}
 
-window.parent.scrollTo(0, 0);
+    function reSize()
+    {
+        var frame2 = window.parent.document.getElementById("iFrame2");
+        frame2.height = document.body.clientHeight + 120;
+    }
+
+    var clickedPic = sessionStorage.getItem('clickedPic');//获取被点击图片的id
+    //        var no = parseInt(clickedPic.match(/\d/g)[0]);//获取被点击图片的序号
+    var no = getNum(clickedPic);
+    //alert(no);
+    var price = priceArr[no - 1];
+    //alert(price);
+    var detail = detailArr[no - 1];
+    var floName = floNameArr[no - 1];
+    document.getElementById("title").innerHTML = floName;
+    document.getElementById("detail").innerHTML = detail;
+    document.getElementById("price").innerHTML = "￥" + price;
+
+
+    function addToCart()
+    {
+        var cartItems = [];
+        if (localStorage.getItem("cartItems") != null)
+        {
+            cartItems = JSON.parse(localStorage.getItem("cartItems"));
+        }
+        if ($.inArray(no - 1, cartItems))
+        {
+            cartItems.splice(0, 0, no - 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            alert("添加购物车成功");
+        }
+        else
+        {
+            alert("已加入购物车 请勿重复添加");
+        }
+    }
+
+    window.parent.scrollTo(0, 0);
 </script>
 </body>
 </html>

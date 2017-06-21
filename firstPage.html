@@ -7,14 +7,15 @@
         /*body{
             font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
         }*/
-        img{
+        img {
             z-index: -1;
             position: absolute;
             left: 0;
             top: 0;
-            height:970px; 
-            width:100%;
+            height: 970px;
+            width: 100%;
         }
+
         #headBar {
             margin-right: 40px;
             height: 100px;
@@ -22,30 +23,35 @@
             /*background-color: #efefef;*/
             z-index: 999;
         }
+
         #headBar a {
             margin: 20px;
             float: right;
             text-decoration: none;
             z-index: 999;
-            color:black;
+            color: black;
         }
-        #slogan{
-            
+
+        #slogan {
+
             margin: auto;
             height: 200px;
             width: 500px;
             text-align: center;
         }
-        p{
-            font-size:100px;
+
+        p {
+            font-size: 100px;
         }
-        #buttons{
+
+        #buttons {
             height: 70px;
             width: 390px;
             /*background-color: pink;*/
             margin: auto;
         }
-        .btn{
+
+        .btn {
             height: 50px;
             width: 170px;
             background-color: #0070c9;
@@ -54,102 +60,145 @@
             margin: 10px;
         }
 
-        #image1{
+        #image1 {
             -webkit-animation-name: img1;
             -webkit-animation-duration: 20s;
             animation-iteration-count: infinite;
         }
-        #image2{
+
+        #image2 {
             -webkit-animation-name: img2;
             -webkit-animation-duration: 20s;
             animation-iteration-count: infinite;
         }
-        #image3{
+
+        #image3 {
             -webkit-animation-name: img3;
             -webkit-animation-duration: 20s;
             animation-iteration-count: infinite;
         }
-        #image4{
+
+        #image4 {
             -webkit-animation-name: img4;
             -webkit-animation-duration: 20s;
             animation-iteration-count: infinite;
         }
-        #image5{
+
+        #image5 {
             -webkit-animation-name: img5;
             -webkit-animation-duration: 20s;
             animation-iteration-count: infinite;
         }
-        @-webkit-keyframes img1{
-            0% {opacity: 1;}
-            20% {opacity: 0;}
-            80% {opacity: 0;}
-            100% {opacity: 1;}
+
+        @-webkit-keyframes img1 {
+            0% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 0;
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
-        @-webkit-keyframes img2{
-            20% {opacity: 1;}
-            40% {opacity: 0;}
-            80% {opacity: 0;}
-            100% {opacity: 1;}
+
+        @-webkit-keyframes img2 {
+            20% {
+                opacity: 1;
+            }
+            40% {
+                opacity: 0;
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
-        @-webkit-keyframes img3{
-            20% {opacity: 0;}
-            40% {opacity: 1;}
-            60% {opacity: 0;}
+
+        @-webkit-keyframes img3 {
+            20% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+            60% {
+                opacity: 0;
+            }
         }
-        @-webkit-keyframes img4{
-            40% {opacity: 0;}
-            60% {opacity: 1;}
-            80% {opacity: 0;}
+
+        @-webkit-keyframes img4 {
+            40% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0;
+            }
         }
-        @-webkit-keyframes img5{
-            60% {opacity: 0;}
-            80% {opacity: 1;}
-            100% {opacity: 0;}
+
+        @-webkit-keyframes img5 {
+            60% {
+                opacity: 0;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
 
-    <script src="jquery-3.1.1.min.js"></script>
-    <!--<script type="text/javascript">
-        $(document).ready(function(){
-            $("#image1").animate(function(){
-                display:block;                
-            });
-        });
-           
-        
-    </script>-->
-    
-    
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+
 </head>
 
 <body onload="slider();">
-    
-    <!--<div id="headBar">-->
-        <!--<a id="btn1" href="loginPage.html"-->
-        <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">Login</a>-->
-        <!--<a id="btn2" href=""-->
-        <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">Register</a>-->
-        <!--<a id="btn3" href=""-->
-        <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">Customer Service</a>-->
-        <!--<a id="btn4" href=""-->
-        <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',4);">Contact Us</a>-->
-        <!--<a id="btn5" href=""-->
-        <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',5);">Home</a>-->
-    <!--</div>-->
-    <div id="slogan">
-        <p>Welcome</p>
-    </div>
-    <div id="buttons">
-        <button class="btn" id="login" onclick="sessionStorage.setItem('guestFlag','false');window.location='index.html'">Login</button>
-        <button class="btn" id="guest" onclick="sessionStorage.setItem('guestFlag','true');window.location='index.html'">Guest</button>
-    </div>
-    <div class="items">
-        <img id="image1" class="item item1" src="img/firstPage04.jpg" height="970px" width="100%" style="opacity: 1">
-        <img id="image2" class="item item2" src="img/firstPage03.jpg" height="970px" width="100%" style="opacity: 0">
-        <img id="image3" class="item item3" src="img/firstPage02.jpg" height="970px" width="100%" style="opacity: 0"> 
-        <img id="image4" class="item item3" src="img/firstPage01.jpg" height="970px" width="100%" style="opacity: 0"> 
-        <img id="image5" class="item item3" src="img/firstPage05.jpg" height="970px" width="100%" style="opacity: 0"> 
-    </div>
-    
+
+<!--<div id="headBar">-->
+<!--<a id="btn1" href="loginPage.html"-->
+<!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',1);">Login</a>-->
+<!--<a id="btn2" href=""-->
+<!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">Register</a>-->
+<!--<a id="btn3" href=""-->
+<!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">Customer Service</a>-->
+<!--<a id="btn4" href=""-->
+<!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',4);">Contact Us</a>-->
+<!--<a id="btn5" href=""-->
+<!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',5);">Home</a>-->
+<!--</div>-->
+<div id="slogan">
+    <p>Welcome</p>
+</div>
+<div id="buttons">
+    <button class="btn" id="login"
+            onclick="sessionStorage.setItem('guestFlag','false');window.location='index.html'">Login
+    </button>
+    <button class="btn" id="guest"
+            onclick="sessionStorage.setItem('guestFlag','true');window.location='index.html'">Guest
+    </button>
+</div>
+<div class="items">
+    <img id="image1" class="item item1" src="img/firstPage04.jpg" height="970px" width="100%"
+         style="opacity: 1">
+    <img id="image2" class="item item2" src="img/firstPage03.jpg" height="970px" width="100%"
+         style="opacity: 0">
+    <img id="image3" class="item item3" src="img/firstPage02.jpg" height="970px" width="100%"
+         style="opacity: 0">
+    <img id="image4" class="item item3" src="img/firstPage01.jpg" height="970px" width="100%"
+         style="opacity: 0">
+    <img id="image5" class="item item3" src="img/firstPage05.jpg" height="970px" width="100%"
+         style="opacity: 0">
+</div>
+
 </body>
 </html>

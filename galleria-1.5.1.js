@@ -6910,7 +6910,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 } else {
     window.Galleria = Galleria;
     if ( typeof define === "function" && define.amd ) {
-        define( "galleria", ['jquery'], function() { return Galleria; } );
+        define( "galleria", ['js/jQuery'], function() { return Galleria; } );
     }
 }
 

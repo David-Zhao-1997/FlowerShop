@@ -11,7 +11,7 @@
             list-style: none;
             border: 1px solid #d9d9d9;
             display: block;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .set-info {
@@ -21,7 +21,7 @@
             border: 1px solid #d9d9d9;
             display: block;
             line-height: 52px;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .set-info a {
@@ -52,8 +52,6 @@
             float: right;
             margin-right: 10px;
         }
-
-
     </style>
 </head>
 <body onload="reSize()">
@@ -152,8 +150,8 @@
         var td2 = tr.insertCell(tr.cells.length);
         var td3 = tr.insertCell(tr.cells.length);
         var td4 = tr.insertCell(tr.cells.length);
-        var picSrc = "img/FloImage/f" + (cartItems[i] + 1) + ".jpg";
-        td0.innerHTML = "<img height='48' src=" + picSrc + ">"
+        var picSrc = "img/FloImage/f" + (cartItems[i] + 1) + ".png";
+        td0.innerHTML = "<img height='48' src=" + picSrc + ">";
         td1.innerHTML = floNameArr[cartItems[i]];
         td2.innerHTML = priceArr[cartItems[i]];
         td3.innerHTML = "<input class='number' type='number' value='1' oninput='calTotalPrice()'/>";
