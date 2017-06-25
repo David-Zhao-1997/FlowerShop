@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>head</title>
     <style>
-        * {
-            /*background-color: lightsalmon;*/
-        }
-
         #headBar {
             margin-right: 40px;
         }
@@ -23,15 +19,15 @@
 <body>
 <div id="headBar">
     <a id="btn1" href=""
-       onclick="window.parent.bodyFrame.location='LoginPage.html';">登录 / 注册</a>
-    <a id="btn2" href=""
-       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">按钮2</a>
+       onclick="window.parent.location='firstPage.html';">Login / Register</a>
+    <!--<a id="btn2" href=""-->
+       <!--onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',2);">按钮2</a>-->
     <a id="btn3" href=""
-       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',3);">按钮3</a>
-    <a id="btn4" href=""
-       onclick="window.parent.bodyFrame.location='test.html';sessionStorage.setItem('num',4);">按钮4</a>
+       onclick="window.parent.bodyFrame.location='flowerService.html';">Service</a>
     <a id="btn5" href=""
-       onclick="window.parent.bodyFrame.location='cart.html';">购物车</a>
+       onclick="window.parent.bodyFrame.location='cart.html';">Cart</a>
+    <a id="btn4" href=""
+       onclick="window.parent.bodyFrame.location='homeBody.html';">Homepage</a>
 </div>
 </body>
 </html>

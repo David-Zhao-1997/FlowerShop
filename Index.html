@@ -7,75 +7,98 @@
     <script src="js/Objects.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/bgstretcher.css"/>
-
+    <link rel="stylesheet" type="text/css" href="css/IndexStyle.css">
     <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
     <script type="text/javascript" src="js/bgstretcher.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/IndexScript.js"></script>
+    <script>
+        function subShowlog(div)
+        {
+            var a = div.childNodes;
+            /* alert(a.length);*/
+            a[1].style.display = "block";
+        }
 
-    <script type="text/javascript">
-        $(document).ready(function () {
+        function subHidelog(div)
+        {
+            var a = div.childNodes;
+            a[1].style.display = "none";
+        }
 
-            //  Initialize Backgound Stretcher
-            $('BODY').bgStretcher({
-                images: ['images/sample-1.jpg', 'images/sample-2.jpg', 'images/sample-3.jpg', 'images/sample-4.jpg', 'images/sample-5.jpg', 'images/sample-6.jpg'],
-                imageWidth: 1024,
-                imageHeight: 768,
-                slideDirection: 'N',
-                slideShowSpeed: 1000,
-                transitionEffect: 'fade',
-                sequenceMode: 'normal',
-                buttonPrev: '#prev',
-                buttonNext: '#next',
-                pagination: '#nav',
-                anchoring: 'left center',
-                anchoringImg: 'left center'
-            });
-
-        });
     </script>
     <style>
-        body {
-            background: url("img/change1.jpg") no-repeat fixed;
-        }
+
     </style>
 </head>
 <body onload="reSize()">
-<script>
-    var cnt = 0;
-
-    var bgcs = ["change1.jpg", "change2.jpg", "meizi3.jpg", "meizi4.jpg"];
-
-    function changeBgc()
-    {
-        $("body").css("background", "url(" + bgcs[cnt % bgcs.length] + ") no-repeat fixed");
-        cnt++;
-    }
-
-</script>
-
 <iframe name="headFrame" allowTransparency="true" id="iFrame1" width="100%" height="100"
-        src="head.html" name="HeaderFrame"
-        src=""
+        src="head.html"
         frameborder="0"></iframe>
 <iframe name="bodyFrame" allowTransparency="true" id="iFrame2" width="100%" height="400"
         src="loginPage.html"
         name="NavigationFrame"
         frameborder="0"></iframe>
 <iframe name="footFrame" allowTransparency="true" id="iFrame3" width="100%" height="100"
-        src="foot.html" name="ContentFrame2"
+        src="foot.html"
         frameborder="0"></iframe>
-<script>
-    function reSize()
-    {
-        var frame2 = window.parent.document.getElementById("iFrame2");
-        frame2.height = document.body.clientHeight + 120;
-//        window.setInterval(changeBgc, 3500);
-    }
+<div id="quick_links_panel">
+    <div class="quick_links">
+        <div>
+            <a href="loginPage.html">
+                <img src="img/login_icon.png">
+            </a>
+            <li id="login_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+                <div class="logAthe">
+                    <nav>
+                        <div>Your details</div>
+                        <br>
+                        <div>Name</div>
+                        <br>
+                        <div>Address</div>
+                        <br>
+                        <div>Your ID :</div>
+                    </nav>
+                </div>
+            </li>
+        </div>
 
-    var frame1 = document.getElementById("iFrame1");
-    var frame2 = document.getElementById("iFrame2");
-    var frame3 = document.getElementById("iFrame3");
-</script>
-</button>
+        <a href="#" onclick="window.parent.bodyFrame.location='cart.html'">
+            <img src="img/shoppingcart_icon.png">
+            <!--<div id="shoppingcartText">Cart</div>-->
+        </a>
+        <li id="shoppingcart_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+
+            <div class="shoppingcart_iconAthe">
+
+                <nav>
+                    <div>Your details</div>
+                    <br>
+                    <div>Name</div>
+                    <br>
+                    <div>Address</div>
+                    <br>
+                    <div>Your ID :</div>
+                </nav>
+            </div>
+        </li>
+        <a href="#">
+            <img src="img/headset_icon.png">
+        </a>
+        <li id="headset_icon" onmouseover="subShowlog(this)" onmouseout="subHidelog(this)">
+            <div class="headset_iconAthe">
+                <nav>
+                    <div>Your details</div>
+                    <br>
+                    <div>Name</div>
+                    <br>
+                    <div>Address</div>
+                    <br>
+                    <div>Your ID :</div>
+                </nav>
+            </div>
+        </li>
+    </div>
+</div>
 </body>
 </html>

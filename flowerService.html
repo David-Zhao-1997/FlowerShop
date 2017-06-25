@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower</title>
+    <link type="text/css" rel="stylesheet" herf="Style.css"/>
+    <style type="text/css">
+        img {
+            position: absolute;
+            left: 980px;
+            top: 650px;
+        }
+    </style>
+    <script>
+        function generateFloatLayer(){
+            floatArea=document.getElementById("adver");
+            floatArea.style.display="none";
+            divClose='<div id="close" style="position:absolute; right:10px; top:10px; left:auto; bottom:auto;"><a href="javascript:closeFloat();">Close</a></div><br>';
+            x=event.clientX + document.body.scrollLeft;
+            y=event.clientY + document.body.scrollTop;
+            floatArea.innerHTML=divClose+"<div id=\"floatcontent\"+<h1 style='color: deepskyblue'; font-family: Algerian '><center>Today's&nbsp Recommed</center></h1><br><p>&nbsp&nbspprice：300yuan<br>&nbsp&nbspCategory：Freshflower<br>&nbsp&nbspName:Rose <br>&nbsp&nbspThe same with star</p></div>";
+            floatArea.style.border="black 1px solid";
+            floatArea.style.left=(document.documentElement.scrollLeft+x-15)+"px";
+            floatArea.style.top=(document.documentElement.scrollTop+y-10)+"px";
+            floatArea.style.width="300px";
+            floatArea.style.height="200px";
+            floatArea.style.display="";
+        }
+
+        function closeFloat(){
+            floatArea=document.getElementById("adver");
+            floatArea.innerHTML="";
+            floatArea.style.display="none";
+        }
+    </script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/flowerServiceScript.js"></script>
+
+</head>
+<body style="background-color: #FFDFDF" onload="resize()">
+<div id="headerpic" style="background:url(img/poper.jpg); width:1500px;height:100px;">
+    <center>
+        <h1 id="header"
+            style="color:ghostwhite; font-family: Bodoni MT Black; font-size:60px;margin-top:15px">
+            Flower Service</h1>
+    </center>
+</div>
+<br>
+<br>
+
+<h3 style="font-family: 'Book Antiqua'"/>
+<div>
+    <table width="1500px" style="padding-left: 200px;padding-right: 200px">
+        <thead style="font-family: Algerian;font-size: 40px">
+        <th>Your Message</th>
+        <th>Office Address</th>
+        <th>Timings</th>
+        </thead>
+        <tbody>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <div>
+            <tr style="color: #999999;font-size: 20px">
+                <td rowspan="6" width="400px">Lorem Ipsum is inting and typesetting in simply dummy
+                    text of the printing and typesetting industry. Lorem Ipsum has been the is dummy
+                    text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book.
+                </td>
+            </tr>
+            <tr style="color: #999999;font-size: 20px">
+                <td style="text-align: center;"> Address</td>
+                <td style="text-align: center">Monday - Friday</td>
+            </tr>
+            <tr style="color: #999999;font-size: 20px">
+                <td style="text-align: center">5th Street, Carl View - United States</td>
+                <td style="text-align: center"> 09:00 AM - 6:30 PM</td>
+            </tr>
+            <tr style="color: #999999;font-size: 20px">
+                <td style="text-align: center">Email</td>
+                <td style="text-align: center"> Saturday</td>
+            </tr>
+            <tr style="color: #999999;font-size: 20px">
+                <td style="text-align: center">info@</td>
+                <td style="text-align: center">Phone</td>
+            </tr>
+            <tr style="color: #999999 ;font-size: 20px">
+                <td style="text-align: center"> Sunday</td>
+                <td style="text-align: center">+09 123 1234 123</td>
+            </tr>
+        </div>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="middlepic" style="background:url(img/timg.jpg); width:1500px;height:100px;">
+    <center>
+        <h1 id="middle"
+            style="color:ghostwhite; font-family: Bodoni MT Black; font-size:60px;margin-top:15px">
+            Contact Us</h1>
+    </center>
+</div>
+<div>
+    <br><br><br>
+    <div class="text">
+        <div class="form-group">
+            <label style="font-size: 25px ;padding-left: 200px">Name</label>
+            <input style="width:500px;height:28px" type="text" class="form-control"
+                   placeholder="Your Name">
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label style="font-size: 25px ;padding-left: 200px">Email</label>
+            <input style="width:200px;height:28px" type="email" class="form-control"
+                   placeholder="Email address">
+            <label style="font-size: 25px ;padding-left: 10px">Phone</label>
+            <input style="width:200px;height:28px" type="text" class="form-control"
+                   placeholder="Phone number">
+        </div>
+        <br><br>
+
+        <div class="form-group">
+            <label style="font-size: 25px ;padding-left: 200px">Subject</label>
+            <input style="width:480px;height:28px" type="text" class="form-control"
+                   placeholder="Subject">
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label style="font-size: 25px ;padding-left: 200px">Message</label>
+            <textarea style="width:470px;height:200px" class="form-control" id="message"
+                      placeholder="Write you message here..." style="height:100px;"></textarea>
+        </div>
+    </div>
+    <br><br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <button class="btn" onclick="click_send();">Send message</button>
+    <br>
+    <a href="javascript:void(0)" class="BtnClear"
+       onclick="javascript:document.getElementById('message').value=''"></a>
+</div>
+<div>
+    <img href="#" src="img/recommed.jpg" onclick="javascript:generateFloatLayer()" height="300"
+         width="500"/>
+</div>
+<div id="adver"
+     style="position:absolute; z-index:100; display:none; background-color:#eeeeee"></div>
+
+<script src="jquery-3.1.1.min.js"></script>
+</body>
+</html>

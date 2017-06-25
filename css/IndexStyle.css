@@ -1,0 +1,118 @@
+body {
+    background: url("img/change1.jpg") no-repeat fixed;
+}
+
+#quick_links_panel {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 34px;
+    background-color: #d8abcd;
+    height: 100%;
+}
+
+.quick_links {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -190px;
+    z-index: 5;
+    width: 34px;
+}
+
+.sub {
+    padding: 30px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 248px;
+    z-index: 3;
+    left: 0;
+    top: 3px;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.logAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: #f4aeff;
+    opacity: 0.6;
+}
+
+.headset_iconAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: lavender;
+    opacity: 0.8;
+}
+
+.shoppingcart_iconAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: lavender;
+    opacity: 0.8;
+}
+
+#login_icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+#shoppingcart_icon {
+    border: 1px solid #aaaaaa;
+    position: absolute;
+    display: inline-block;
+    top: 35px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    margin: 7px 0;
+    vertical-align: 20px;
+    padding-top: 50px;
+}
+
+#headset_icon {
+    position: absolute;
+    display: inline-block;
+    top: 200px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    margin: 7px 0;
+    vertical-align: 20px;
+}

@@ -1,0 +1,240 @@
+html, body {
+    /*background: #d8abcd;*/
+    margin: 0;
+}
+
+body {
+    /*border-top: 4px solid #d8abcd;*/
+    background: transparent;
+
+}
+
+.content {
+    color: #777;
+    font: 12px/1.4 "helvetica neue", arial, sans-serif;
+    width: 620px;
+    margin: 20px auto;
+}
+
+h1 {
+    font-size: 12px;
+    font-weight: normal;
+    color: #ddd;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 20px
+}
+
+a {
+    color: #22BCB9;
+    text-decoration: none;
+}
+
+.cred {
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+/* This rule is read by Galleria to define the gallery height: */
+#galleria {
+    height: 370px;
+    background: #d8abcd;
+}
+
+#shangmiandebiankuang {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 50px;
+}
+
+.jtico {
+    font-size: 14px;
+}
+
+/** {
+    background-color: lightgreen;
+}*/
+body {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    /*background-image: url(pic/bgall.gif);*/
+}
+
+#quick_links_panel {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 34px;
+    background-color: #d8abcd;
+    height: 100%;
+}
+
+.flowerItem {
+    height: 240px;
+    width: 220px;
+    border: 1px solid #949494;
+    margin-right: -5px;
+    cursor: pointer;
+}
+
+#categoryTab {
+    background-color: #fbdeff;
+    width: 1240px;
+    height: 30px;
+    border-radius: 4px;
+    margin: auto;
+}
+
+.categoryTabItem {
+    width: 308px;
+    height: 28px;
+    border: 1px solid #d8abcd;
+    display: block;
+    float: left;
+    text-align: center;
+
+}
+
+:hover.categoryTabItem {
+    background-color: #be607e;
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+#scrollingPic {
+    width: 80%;
+    height: 400px;
+    border: 1px solid #d8abcd;
+    margin: auto;
+}
+
+.flowerGroup {
+    width: 1129px;
+    height: 365px;
+    margin: auto;
+    text-align: left;
+}
+
+.quick_links {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -190px;
+    z-index: 5;
+    width: 34px;
+}
+
+#login_icon {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+#shoppingcart_icon {
+    border: 1px solid #aaaaaa;
+    position: absolute;
+    display: inline-block;
+    top: 35px;
+    left: 0;
+    width: 34px;
+    height: 100px;
+    cursor: pointer;
+    margin: 7px 0;
+    vertical-align: 20px;
+    padding-top: 50px;
+}
+
+#headset_icon {
+    position: absolute;
+    display: inline-block;
+    top: 200px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    margin: 7px 0;
+    vertical-align: 20px;
+}
+
+span {
+    font-size: 40px;
+    font-family: tahoma, arial, 'Hiragino Sans GB', '\5FAE\8F6F\96C5\9ED1', sans-serif;
+    color: #737373;
+}
+
+.sub {
+    padding: 30px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 248px;
+    z-index: 3;
+    left: 0;
+    top: 3px;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.logAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: #f4aeff;
+    opacity: 0.6;
+}
+
+.headset_iconAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: lavender;
+    opacity: 0.8;
+}
+
+.shoppingcart_iconAthe {
+    padding: 0px;
+    text-align: left;
+    display: none;
+    position: relative;
+    height: 150px;
+    width: 200px;
+    float: left;
+    z-index: 3;
+    left: -200px;
+    top: -10px;
+    background-color: lavender;
+    opacity: 0.8;
+}
+
+.ff {
+    font-family: "Comic Sans MS", serif;
+    font-size: large;
+}
